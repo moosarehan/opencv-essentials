@@ -4,10 +4,12 @@ import numpy as np
 def bounds(color):
     c=np.uint8([[color]])
     hsv=cv2.cvtColor(c,cv2.COLOR_BGR2HSV)
-    upperlimit=hsv[0][0][0]+10,100,255
-    lowerlimit=hsv[0][0][0]-10,100,255
-    lowerlimit=np.array(lowerlimit,dtype=np.uint8)
-    upperlimit=np.array(upperlimit,dtype=np.uint8)
+    hue=hsv[0][0][0]
+    # wider hue range (±15) to catch more shades
+    # lower saturation floor (40) to catch pale/pastel shades
+    # lower value floor (40) to catch darker shades
+    lowerlimit=np.array([max(hue-15,0), 40, 40],dtype=np.uint8)
+    upperlimit=np.array([min(hue+15,179), 255, 255],dtype=np.uint8)
     return lowerlimit,upperlimit
 
 
@@ -31,14 +33,3 @@ while True:
 
 web.release()
 cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
-
-
-
