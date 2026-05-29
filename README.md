@@ -250,3 +250,11 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 ---
 
 ⭐ *If you found this repository helpful, please consider giving it a star on GitHub!*
+
+---
+
+## 📬 Contact Me
+
+Feel free to reach out for questions, collaboration, or support:
+* **Email:** [moosarehan4@gmail.com](mailto:moosarehan4@gmail.com)
+
